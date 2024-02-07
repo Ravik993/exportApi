@@ -7,7 +7,7 @@ app.use(cors());
 
 app.get('/api/capture-screenshot', async (req, res) => {
     try {
-        debugger
+
         const url = req.query.url;
         if (!url) {
             return res.status(400).json({ error: 'URL parameter is required' });
