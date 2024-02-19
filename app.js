@@ -26,6 +26,10 @@ app.get('/api/capture-screenshot', async (req, res) => {
 
         await page.evaluate(() => {
             window.scrollTo(0, document.body.scrollHeight);
+            const elementsToExclude = document.querySelectorAll('.br-bttn');
+            elementsToExclude.forEach(element => {
+                element.style.setProperty('display', 'none', 'important');
+            });
         });
 
         // Capture a screenshot of the entire dashboard
